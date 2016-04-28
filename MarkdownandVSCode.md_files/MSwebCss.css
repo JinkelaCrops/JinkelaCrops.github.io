@@ -1,5 +1,5 @@
 html{
-	font-size:0.75rem;/*10px*/
+	font-size:0.75em;/*10px*/
 }
 
 body {
@@ -151,7 +151,7 @@ code,kbd,pre,samp {
 }
 
 code {
-	padding:2px 4px;
+	padding:0.2rem 0.4rem;
 	font-size:90%;
 	color:#c7254e;
 	background-color:#f9f2f4;
@@ -160,7 +160,7 @@ code {
 
 pre {
 	display:block;
-	padding:9.5px;
+	padding:0.95rem;
 	margin:0 0 1rem;
 	font-size:1.3rem;
 	line-height:1.42857143;
@@ -183,10 +183,10 @@ pre code {
 }
 
 blockquote {
-	padding:10px 20px;
+	padding:1rem 2rem;
 	margin:0 0 2rem;
 	font-size:1.75rem;
-	border-left:5px solid #eee;
+	border-left:0.5rem solid #eee;
 }
 
 blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child {
@@ -216,7 +216,7 @@ table>caption+thead>tr:first-child>td,table>caption+thead>tr:first-child>th,tabl
 }
 
 table>tbody>tr>td,table>tbody>tr>th,table>tfoot>tr>td,table>tfoot>tr>th,table>thead>tr>td,table>thead>tr>th {
-	padding:8px;
+	padding:0.8rem;
 	line-height:1.42857143;
 	vertical-align:top;
 	border-top:1px solid #ddd
@@ -243,7 +243,7 @@ table>tbody>tr:nth-of-type(odd) {
 	@media (max-width:822px) {
 		.container {
 			width:100%;
-			padding:2rem 0 6rem 0;
+			padding:2rem 2px 6rem 2px;
 	  		border:1px solid #ddd;
 			margin:0 auto;
 		}
@@ -251,9 +251,12 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 @media screen and (max-device-width: 861px){
+	html{
+		font-size:1em;/*10px*/
+	}
 	.container {
 		width:100%;
-		padding:2rem 0.1rem 6rem 0.1rem;
+		padding:2rem 2px 6rem 2px;
 	  	border:1px solid #ddd;
 		margin:0 auto;
 	}
