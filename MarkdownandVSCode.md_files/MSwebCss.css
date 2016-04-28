@@ -18,7 +18,7 @@ body {
 
 @font-face {
 	font-family:chinese_light;
-	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.woff) format("woff"),local("HanHeiSC Thin");/*local("Segoe UI Light"),local("Segoe WP Light")*/
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.ttf) format("truetype"),local("HanHeiSC Thin"),local("Microsoft YaHei Light"),local("Microsift YaHei UI Light");
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
@@ -26,7 +26,7 @@ body {
 
 @font-face {
 	font-family:chinese_normal;
-	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.woff) format("woff"),local("HanHeiSC Text");/*local("Segoe UI Light"),local("Segoe WP Light")*/
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.ttf) format("truetype"),local("HanHeiSC Text"),local("Microsoft YaHei"),local("Microsift YaHei UI");
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
@@ -34,7 +34,7 @@ body {
 
 @font-face {
 	font-family:west_european_light;
-	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.woff) format("woff"),local("Myriad Set Pro Thin");/*local("Segoe UI Light"),local("Segoe WP Light")*/
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.ttf) format("truetype"),local("Myriad Set Pro Thin"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype"),local("Segoe UI Light"),local("Segoe WP Light");
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
@@ -42,7 +42,7 @@ body {
 
 @font-face {
 	font-family:west_european_normal;
-	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text.woff) format("woff"),local("Myriad Set Pro Text");/*local("Segoe UI Light"),local("Segoe WP Light")*/
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text.woff) format("woff")url(https://jinkelacrops.github.io/fonts/myriad-set-text.ttf) format("truetype"),local("Myriad Set Pro Text"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype"),local("Segoe UI"),local("Segoe"),local("Segoe WP");
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
