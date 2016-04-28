@@ -1,5 +1,5 @@
 html{
-	font-size:12px;/*10px*/
+	font-size:11.5px;/*10px*/
 }
 
 body {
@@ -230,9 +230,29 @@ table>tbody>tr:nth-of-type(odd) {
 	background-color:#f9f9f9
 }
 
+@media (min-width:813px) {
+	.container {
+		width:833px;
+		padding:20px 30px 60px 30px;
+	  border:1px solid #ddd;
+		margin:0 auto;
+	}
+}
+
+@media (max-width:812px) {
+	.container {
+		width:100%;
+		padding:20px 0 60px 0;
+	  border:1px solid #ddd;
+		margin:0 auto;
+	}
+}
+
+/* (1-40%*2)*700+280*2=700, 
+   可以在>=700px范围内实现文字宽度按浏览器宽度缩小 */
+/*
 @media (min-width:700px) {
-	/* (1-40%*2)*700+280*2=700, 
-	   可以在>=700px范围内实现文字宽度按浏览器宽度缩小 */
+
 	.container {
 		padding-left:40%;
 		padding-right:40%;
@@ -244,11 +264,13 @@ table>tbody>tr:nth-of-type(odd) {
 		border:1px solid #ddd;
 	}
 }
+*/
 
-@media (max-width:699px) and (min-width:625px) {
-	/*  (1-40%*2)*700+250*2=640=700-30*2, 
+/*  (1-40%*2)*700+250*2=640=700-30*2, 
 		(1-40%*2)*625+250*2=625 
 	    可以在[625, 700)px范围内实现留白缩小 */
+/*
+@media (max-width:699px) and (min-width:625px) {
 	.container {
 		width:100%;
 		border:1px solid #ddd;
@@ -262,9 +284,11 @@ table>tbody>tr:nth-of-type(odd) {
 		margin-left: -250px;
 	}
 }
+*/
 
+/* 在小于625px内保证边框线 */
+/*
 @media (max-width:624px) {
-	/* 在小于650px内保证边框线 */
 	.container {
 		border:1px solid #ddd;
 		padding:20px 0 60px 0;
@@ -274,6 +298,7 @@ table>tbody>tr:nth-of-type(odd) {
 div {
 	overflow-x:hidden;
 }
+*/
 
 :after,:before {
 	-webkit-box-sizing:border-box;
