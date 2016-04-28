@@ -1,5 +1,5 @@
 html{
-	font-size:11.5px;/*10px*/
+	font-size:0.75rem;/*10px*/
 }
 
 body {
@@ -230,23 +230,35 @@ table>tbody>tr:nth-of-type(odd) {
 	background-color:#f9f9f9
 }
 
-@media (min-width:813px) {
+@media screen and (min-device-width: 862px){
+	@media (min-width:823px) {
 	.container {
-		width:833px;
-		padding:20px 30px 60px 30px;
-	  border:1px solid #ddd;
+			width:862px;
+			padding:2rem 3rem 6rem 3rem;
+	  		border:1px solid #ddd;
+			margin:0 auto;
+		}
+	}
+
+	@media (max-width:822px) {
+		.container {
+			width:100%;
+			padding:2rem 0 6rem 0;
+	  		border:1px solid #ddd;
+			margin:0 auto;
+		}
+	}
+}
+
+@media screen and (max-device-width: 861px){
+	.container {
+		width:100%;
+		padding:2rem 0.1rem 6rem 0.1rem;
+	  	border:1px solid #ddd;
 		margin:0 auto;
 	}
 }
 
-@media (max-width:812px) {
-	.container {
-		width:100%;
-		padding:20px 0 60px 0;
-	  border:1px solid #ddd;
-		margin:0 auto;
-	}
-}
 
 /* (1-40%*2)*700+280*2=700, 
    可以在>=700px范围内实现文字宽度按浏览器宽度缩小 */
