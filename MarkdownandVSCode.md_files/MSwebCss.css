@@ -34,7 +34,7 @@ body {
 
 @font-face {
 	font-family:chinese_semibold;
-	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.ttf) format("truetype"),local("HanHeiSC SemiBold"),local("Microsoft YaHei"),local("Microsift YaHei UI");
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.ttf) format("truetype"),local("HanHeiSC SemiBold"),local("Microsoft YaHei Bold"),local("Microsift YaHei UI Bold");
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
