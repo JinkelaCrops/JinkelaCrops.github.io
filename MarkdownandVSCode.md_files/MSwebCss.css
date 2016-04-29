@@ -18,7 +18,7 @@ body {
 
 @font-face {
 	font-family:chinese_light;
-	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.ttf) format("truetype"),local("HanHeiSC Thin"),local("Microsoft YaHei Light"),local("Microsift YaHei UI Light");
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-thin.ttf) format("truetype"),local("HanHeiSC Thin");/*,local("Microsoft YaHei Light"),local("Microsift YaHei UI Light");*/
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
@@ -26,7 +26,7 @@ body {
 
 @font-face {
 	font-family:chinese_normal;
-	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.ttf) format("truetype"),local("HanHeiSC Text"),local("Microsoft YaHei"),local("Microsift YaHei UI");
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-text.ttf) format("truetype"),local("HanHeiSC Text");/*,local("Microsoft YaHei"),local("Microsift YaHei UI");*/
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
@@ -34,7 +34,7 @@ body {
 
 @font-face {
 	font-family:chinese_semibold;
-	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.ttf) format("truetype"),local("HanHeiSC SemiBold"),local("Microsoft YaHei Bold"),local("Microsift YaHei UI Bold");
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.ttf) format("truetype"),local("HanHeiSC SemiBold");/*,local("Microsoft YaHei Bold"),local("Microsift YaHei UI Bold");*/
 	font-weight:400;
 	font-style:normal;
 	-webkit-font-smoothing:antialiased
@@ -83,7 +83,7 @@ p {
 
 
 h1,h2,h3,h4,h5,h6 {
-	font-family:west_european_light,chinese_light,HelveticaNeue-Thin,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,sans-serif;
+	font-family:west_european_light,chinese_light,west_european_normal,chinese_normal,HelveticaNeue-Thin,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,sans-serif;
 	font-weight:400;
 	line-height:4.4rem
 }
@@ -226,6 +226,7 @@ table {
 }
 
 th {
+	font-family: west_european_semibold,chinese_semibold,west_european_normal,chinese_normal;
 	text-align:left
 }
 
@@ -270,7 +271,7 @@ table>tbody>tr:nth-of-type(odd) {
 
 @media screen and (max-device-width: 861px){
 	html{
-		font-size:1.1em;/*10px*/
+		font-size:1.2em;/*10px*/
 	}
 	.container {
 		width:100%;
