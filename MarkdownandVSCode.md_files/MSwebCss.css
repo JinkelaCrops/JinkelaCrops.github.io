@@ -1,5 +1,5 @@
 html{
-	font-size:0.75em;/*10px*/
+	font-size:0.78em;/*10px*/
 }
 
 body {
@@ -33,6 +33,15 @@ body {
 }
 
 @font-face {
+	font-family:chinese_semibold;
+	src:url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/HanHei-SC-semibold.ttf) format("truetype"),local("HanHeiSC SemiBold"),local("Microsoft YaHei"),local("Microsift YaHei UI");
+	font-weight:400;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased
+}
+
+
+@font-face {
 	font-family:west_european_light;
 	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.ttf) format("truetype"),local("Myriad Set Pro Thin"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype"),local("Segoe UI Light"),local("Segoe WP Light");
 	font-weight:400;
@@ -48,6 +57,13 @@ body {
 	-webkit-font-smoothing:antialiased
 }
 
+@font-face {
+	font-family:west_european_semibold;
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_semibold.woff) format("woff")url(https://jinkelacrops.github.io/fonts/myriad-set-semibold.ttf) format("truetype"),local("Myriad Set Pro Semibold"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.woff) format("woff"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/Semibold/latest.ttf) format("truetype"),local("Segoe UI Semibold"),local("Segoe Semibold"),local("Segoe WP Semibold");
+	font-weight:400;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased
+}
 
 
 * {
@@ -77,10 +93,12 @@ h4,h5,h6 {
 }
 
 strong {
+	font-family: west_european_semibold,chinese_semibold;
   font-weight:600;
 }
 
 h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong {
+	font-family: west_european_normal,chinese_normal;
 	font-weight:600;
 }
 
@@ -252,7 +270,7 @@ table>tbody>tr:nth-of-type(odd) {
 
 @media screen and (max-device-width: 861px){
 	html{
-		font-size:1em;/*10px*/
+		font-size:1.1em;/*10px*/
 	}
 	.container {
 		width:100%;
