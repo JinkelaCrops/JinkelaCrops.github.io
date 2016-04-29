@@ -1,5 +1,5 @@
 html{
-	font-size:0.78em;/*10px*/
+	font-size:0.755em;/*10px*/
 }
 
 body {
@@ -250,16 +250,16 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 @media screen and (min-device-width: 862px){
-	@media (min-width:823px) {
+	@media (min-width:700px) {
 	.container {
-			width:862px;
+			width:60rem;/*60*16*0.755=724.8*/
 			padding:2rem 3rem 6rem 3rem;
-	  		border:1px solid #ddd;
+	  	border:1px solid #ddd;
 			margin:0 auto;
 		}
 	}
 
-	@media (max-width:822px) {
+	@media (max-width:699.9px) {
 		.container {
 			width:100%;
 			padding:2rem 2px 6rem 2px;
@@ -271,7 +271,7 @@ table>tbody>tr:nth-of-type(odd) {
 
 @media screen and (max-device-width: 861px){
 	html{
-		font-size:1.2em;/*10px*/
+		font-size:1.4rem;/*22.4px, about 65 characters one line*/
 	}
 	.container {
 		width:100%;
