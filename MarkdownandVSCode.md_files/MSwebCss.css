@@ -94,12 +94,12 @@ h4,h5,h6 {
 
 strong {
 	font-family: chinese_semibold,west_european_semibold;
-  font-weight:600;
+  font-weight:400;
 }
 
 h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong {
 	font-family: chinese_normal,west_european_normal;
-	font-weight:600;
+	font-weight:400;
 }
 
 .docs h1 {
