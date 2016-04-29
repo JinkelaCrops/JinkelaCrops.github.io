@@ -83,7 +83,7 @@ p {
 
 
 h1,h2,h3,h4,h5,h6 {
-	font-family:west_european_light,chinese_normal;/*,west_european_normal,chinese_light,HelveticaNeue-Thin,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,sans-serif;*/
+	font-family:chinese_light,west_european_light;/*,west_european_normal,chinese_light,HelveticaNeue-Thin,HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,sans-serif;*/
 	font-weight:400;
 	line-height:4.4rem
 }
@@ -93,12 +93,12 @@ h4,h5,h6 {
 }
 
 strong {
-	font-family: west_european_semibold,chinese_semibold;
+	font-family: chinese_semibold,west_european_semibold;
   font-weight:600;
 }
 
 h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong {
-	font-family: west_european_normal,chinese_semibold;
+	font-family: chinese_normal,west_european_normal;
 	font-weight:600;
 }
 
