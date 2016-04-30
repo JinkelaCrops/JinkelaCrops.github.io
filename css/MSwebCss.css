@@ -1,0 +1,361 @@
+html{
+	font-size:0.85em;/*10px*/
+}
+
+body {
+	color:#333;
+	background-color: #fff;
+	text-rendering:optimizeLegibility;
+}
+
+body {
+	margin:0;
+	height:100%;
+}
+
+@font-face {
+	font-family:Myriad_Thin_online;
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/myriad-set-pro_thin.ttf) format("truetype");
+	font-weight:400;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased
+}
+
+@font-face {
+	font-family:Segoe_Light_online;
+	src:url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.woff) format("woff"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/light/latest.ttf) format("truetype");
+	font-weight:400;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased
+}
+
+@font-face {
+	font-family:Myriad_online;
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text.ttf) format("truetype");
+	font-weight:400;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased
+}
+
+@font-face {
+	font-family:Segoe_online;
+	src:url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.woff) format("woff"),url(https://i.s-microsoft.com/fonts/segoe-ui/west-european/normal/latest.ttf) format("truetype");
+	font-weight:400;
+	font-style:normal;
+	-webkit-font-smoothing:antialiased
+}
+
+@font-face {
+	font-family:Myriad_italic ;
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text-italic.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text-italic.ttf) format("truetype"),local("Myriad Set Pro Text Italic");
+	font-weight:400;
+	font-style:normal;
+}
+
+* {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+}
+
+p {
+	margin:0 0 1rem
+}
+
+.docs {
+	font-size: 1.6rem;/*16px*/
+	line-height:2.56rem;
+	text-align:justify;
+}
+
+body {
+	font-family:"Myriad Set Pro Text",Myriad_online,"Segoe UI","Segoe","Segoe WP",Segoe_online,
+				lucida,Helvetica,
+		    "PingFang SC","Microsoft YaHei",sans-serif;
+	font-weight:400;
+}
+
+h1 strong,h2 strong,h3 strong,h4 strong,h5 strong,h6 strong {
+	font-family:"Myriad Set Pro Text",Myriad_online,"Segoe UI","Segoe","Segoe WP",Segoe_online,
+				lucida,Helvetica,
+				"PingFang SC","Microsoft YaHei",sans-serif;
+	font-weight:400;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-family:"Myriad Set Pro Thin",Myriad_Thin_online,"Segoe UI Light","Segoe WP Light",Segoe_Light_online,
+				lucida,Helvetica,
+				"PingFang SC","Microsoft YaHei Light",sans-serif;
+	font-weight:300;
+	line-height:4.4rem;
+	text-align:	left
+}
+
+strong {
+	font-family:"Myriad Set Pro Text",Myriad_online,"Segoe UI","Segoe","Segoe WP",Segoe_online,
+				lucida,Helvetica,
+				"PingFang SC","Microssoft YaHei",sans-serif;
+  	font-weight:600;
+}
+
+th {
+	font-family:"Myriad Set Pro Text",Myriad_online,"Segoe UI","Segoe","Segoe WP",Segoe_online,
+				lucida,Helvetica,
+				"PingFang SC","Microsoft YaHei",sans-serif;
+	text-align:left;
+	font-weight:600;
+}
+
+em {
+	font-family:Myriad_italic,"STKaiti","STFangsong",serif;
+	font-style:normal;
+	font-size:1.035em
+}
+
+.docs h1 {
+	font-size:4rem;
+	margin-top:1.5rem;
+	margin-bottom:1.5rem;
+}
+
+.docs h2 {
+	font-size:3rem;
+	margin-top: 3rem;
+	margin-bottom:1rem;
+}
+
+.docs h3 {
+	font-size:2.2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.docs h4 {
+	font-size:2.0rem;
+	margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.docs h5 {
+  font-size:1.9rem;
+	margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.docs h6 {
+		font-size:1.8rem;
+	margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.docs .keybinding {
+	font-family:Menlo,Monaco,Consolas,Courier New,monospace;
+	padding:2px 4px;
+	font-size:90%;
+	color:#0072be;
+	background-color:#f4f2f9;
+	border-radius:4px
+}
+
+a {
+	color:#0072be;
+	text-decoration:none;
+	background-color:transparent
+}
+a:focus,a:hover {
+	text-decoration:underline
+}
+
+
+img {
+    max-width:100%;
+	margin:auto;
+	vertical-align:middle;
+	border:0
+}
+
+code,kbd,pre,samp {
+	font-family:Menlo,Monaco,Consolas,"Courier New",monospace
+}
+
+code {
+	padding:0.2rem 0.4rem;
+	font-size:90%;
+	color:#c7254e;
+	background-color:#f9f2f4;
+	border-radius:4px
+}
+
+pre {
+	display:block;
+	padding:0.95rem;
+	margin:0 0 1rem;
+	font-size:1.3rem;
+	line-height:1.42857143;
+	color:#333;
+	word-break:break-all;
+	word-wrap:break-word;
+	background-color:#f5f5f5;
+	border:1px solid #ccc;
+	border-radius:4px;
+	overflow:auto
+}
+
+pre code {
+	padding:0;
+	white-space:pre-wrap;
+	background-color:transparent;
+	border-radius:0
+}
+
+blockquote {
+	padding:1rem 2rem;
+	margin:0 0 2rem;
+	font-size:1.75rem;
+	border-left:0.5rem solid #eee;
+}
+
+blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child {
+	margin-bottom:0
+}
+
+ol,ul {
+	margin-top:0;
+	margin-bottom:1rem
+}
+
+table {
+	border-spacing:0;
+	border-collapse:collapse;
+	background-color:transparent;
+	width:100%;
+	max-width:100%;
+	margin-bottom:2rem
+}
+
+table>caption+thead>tr:first-child>td,table>caption+thead>tr:first-child>th,table>colgroup+thead>tr:first-child>td,table>colgroup+thead>tr:first-child>th,table>thead:first-child>tr:first-child>td,table>thead:first-child>tr:first-child>th {
+	border-top:0
+}
+
+table>tbody>tr>td,table>tbody>tr>th,table>tfoot>tr>td,table>tfoot>tr>th,table>thead>tr>td,table>thead>tr>th {
+	padding:0.8rem;
+	line-height:1.42857143;
+	vertical-align:top;
+	border-top:1px solid #ddd
+}
+table>thead>tr>th {
+	vertical-align:bottom;
+	border-bottom:2px solid #ddd
+}
+
+table>tbody>tr:nth-of-type(odd) {
+	background-color:#f9f9f9
+}
+
+@media screen and (min-device-width: 862px){
+	body {
+		padding-top:8rem;
+	  padding-bottom:14.5rem;		
+	}
+	@media (min-width:850px) {
+	.container {
+			width:64rem;/*64*16*0.75=870.4*/
+			padding:2rem 3rem 6rem 3rem;
+	  		border:1px solid #ddd;
+			margin:0 auto;
+		}
+	}
+
+	@media (max-width:849.99px) {
+		.container {
+			width:100%;
+			padding:2rem 2px 6rem 2px;
+	  		border:1px solid #ddd;
+			margin:0 auto;
+		}
+	}
+}
+
+@media screen and (max-device-width: 861px){
+	html{
+		font-size:1.4rem;/*22.4px, about 65 characters one line*/
+	}
+	body {
+		padding-top:2.5rem;
+	  padding-bottom:14.5rem;		
+	}
+	.container {
+		width:100%;
+		padding:2rem 2px 6rem 2px;
+	  	border:1px solid #ddd;
+		margin:0 auto;
+	}
+}
+
+
+/* (1-40%*2)*700+280*2=700, 
+   可以在>=700px范围内实现文字宽度按浏览器宽度缩小 */
+/*
+@media (min-width:700px) {
+
+	.container {
+		padding-left:40%;
+		padding-right:40%;
+	}
+	.container .row {
+		margin-right: -280px;
+		margin-left: -280px;
+		padding:20px 30px 60px 30px;
+		border:1px solid #ddd;
+	}
+}
+*/
+
+/*  (1-40%*2)*700+250*2=640=700-30*2, 
+		(1-40%*2)*625+250*2=625 
+	    可以在[625, 700)px范围内实现留白缩小 */
+/*
+@media (max-width:699px) and (min-width:625px) {
+	.container {
+		width:100%;
+		border:1px solid #ddd;
+		padding-left:40%;
+		padding-right:40%;
+		padding-bottom:60px;
+		padding-top:20px;
+	}
+	.container .row {
+		margin-right: -250px;
+		margin-left: -250px;
+	}
+}
+*/
+
+/* 在小于625px内保证边框线 */
+/*
+@media (max-width:624px) {
+	.container {
+		border:1px solid #ddd;
+		padding:20px 0 60px 0;
+		}
+}
+
+div {
+	overflow-x:hidden;
+}
+*/
+
+:after,:before {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box
+}
+
+.container:after,.container:before,.row:after,.row:before {
+	display:table;
+	content:" "
+}
+
+.container:after,.row:after {
+	clear:both
+}
