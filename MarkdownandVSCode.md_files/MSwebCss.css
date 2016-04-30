@@ -45,6 +45,13 @@ body {
 	-webkit-font-smoothing:antialiased
 }
 
+@font-face {
+	font-family:Myriad_italic ;
+	src:url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text-italic.woff) format("woff"),url(https://jinkelacrops.github.io/fonts/myriad-set-pro_text-italic.ttf) format("truetype"),local("Myriad Set Pro Text Italic");
+	font-weight:400;
+	font-style:normal;
+}
+
 * {
 	-webkit-box-sizing:border-box;
 	-moz-box-sizing:border-box;
@@ -97,6 +104,12 @@ th {
 				"PingFang SC","Microsoft YaHei",sans-serif;
 	text-align:left;
 	font-weight:600;
+}
+
+em {
+	font-family:Myriad_italic,"STKaiti","STFangsong",serif;
+	font-style:normal;
+	font-size:1.035em
 }
 
 .docs h1 {
