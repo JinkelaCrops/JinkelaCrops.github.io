@@ -10,8 +10,6 @@ body {
 
 body {
 	margin:0;
-	padding-top:8rem;
-	padding-bottom:14.5rem;
 	height:100%;
 }
 
@@ -242,6 +240,10 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 @media screen and (min-device-width: 862px){
+	body {
+		padding-top:8rem;
+	  padding-bottom:14.5rem;		
+	}
 	@media (min-width:738px) {
 	.container {
 			width:64rem;/*64*16*0.75=768*/
@@ -264,6 +266,10 @@ table>tbody>tr:nth-of-type(odd) {
 @media screen and (max-device-width: 861px){
 	html{
 		font-size:1.4rem;/*22.4px, about 65 characters one line*/
+	}
+	body {
+		padding-top:2.5rem;
+	  padding-bottom:14.5rem;		
 	}
 	.container {
 		width:100%;
