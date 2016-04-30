@@ -1,5 +1,5 @@
 html{
-	font-size:0.755em;/*10px*/
+	font-size:0.75em;/*10px*/
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 
 body {
 	margin:0;
-	padding-top:2.5rem;
+	padding-top:8rem;
 	padding-bottom:14.5rem;
 	height:100%;
 }
@@ -59,7 +59,8 @@ p {
 
 .docs {
 	font-size: 1.6rem;/*16px*/
-	line-height:2.56rem
+	line-height:2.56rem;
+	text-align:justify;
 }
 
 body {
@@ -81,7 +82,8 @@ h1,h2,h3,h4,h5,h6 {
 				lucida,Helvetica,
 				"PingFang SC","Microsoft YaHei Light",sans-serif;
 	font-weight:300;
-	line-height:4.4rem
+	line-height:4.4rem;
+	text-align:	left
 }
 
 strong {
@@ -190,8 +192,6 @@ pre {
 
 pre code {
 	padding:0;
-	font-size:inherit;
-	color:inherit;
 	white-space:pre-wrap;
 	background-color:transparent;
 	border-radius:0
@@ -242,16 +242,16 @@ table>tbody>tr:nth-of-type(odd) {
 }
 
 @media screen and (min-device-width: 862px){
-	@media (min-width:700px) {
+	@media (min-width:738px) {
 	.container {
-			width:60rem;/*60*16*0.755=724.8*/
+			width:64rem;/*64*16*0.75=768*/
 			padding:2rem 3rem 6rem 3rem;
-	  	border:1px solid #ddd;
+	  		border:1px solid #ddd;
 			margin:0 auto;
 		}
 	}
 
-	@media (max-width:699.9px) {
+	@media (max-width:737.99px) {
 		.container {
 			width:100%;
 			padding:2rem 2px 6rem 2px;
