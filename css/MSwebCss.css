@@ -219,7 +219,7 @@ blockquote ol:last-child,blockquote p:last-child,blockquote ul:last-child {
 	margin-bottom:0
 }
 
-ol,ul {
+.docs ol,.docs ul {
 	margin-top:0;
 	margin-bottom:1rem
 }
@@ -255,23 +255,29 @@ table>tbody>tr:nth-of-type(odd) {
 @media screen and (min-device-width: 862px){
 	body {
 		padding-top:8rem;
-	  padding-bottom:14.5rem;		
+	 	padding-bottom:14.5rem;		
 	}
 	@media (min-width:850px) {
-	.container {
+		.container {
 			width:64rem;/*64*16*0.75=870.4*/
+			margin:0 auto;
+		}
+		
+		.row{
 			padding:2rem 3rem 6rem 3rem;
 	  		border:1px solid #ddd;
-			margin:0 auto;
 		}
 	}
 
 	@media (max-width:849.99px) {
 		.container {
 			width:100%;
-			padding:2rem 2px 6rem 2px;
-	  		border:1px solid #ddd;
 			margin:0 auto;
+		}
+		
+		.row{
+			padding:2rem 2px 6rem 2px;
+  			border:1px solid #ddd;
 		}
 	}
 }
@@ -280,15 +286,20 @@ table>tbody>tr:nth-of-type(odd) {
 	html{
 		font-size:1.4rem;/*22.4px, about 65 characters one line*/
 	}
+	
 	body {
 		padding-top:2.5rem;
-	  padding-bottom:14.5rem;		
+	 	padding-bottom:14.5rem;		
 	}
+	
 	.container {
 		width:100%;
-		padding:2rem 2px 6rem 2px;
-	  	border:1px solid #ddd;
 		margin:0 auto;
+	}
+	
+	.row {
+		padding:2rem 2px 6rem 2px;
+	 	border:1px solid #ddd;
 	}
 }
 
@@ -351,11 +362,57 @@ div {
 	box-sizing:border-box
 }
 
-.container:after,.container:before,.row:after,.row:before {
+.container:after,.container:before,.row:after,.row:before,.contents.after,.contents.before {
 	display:table;
 	content:" "
 }
 
-.container:after,.row:after {
+.container:after,.row:after,.contents.after {
 	clear:both
 }
+
+
+.contents ul {
+	list-style-type: none;
+	border:1px solid #ddd;
+	padding: 0;
+	margin: 0;
+
+}
+
+.contents li:nth-of-type(1){
+	font-family: "Times New Roman","STKaiti","STFangsong",serif;
+	font-size: 2rem;
+  	display: block;
+	padding: 0.5rem 1.5rem;
+}
+
+.contents li {
+	font-family:Myriad_italic,"STKaiti","STFangsong",serif;
+	font-size: 2.5rem;
+  	display: block;
+ 	padding: 1rem 2rem;
+  	margin-top: -1px;
+  	background-color: transparent;
+  	border: 1px solid #ddd;
+	border-width: 1px 0 0 0;
+  	border-radius: 0;
+}
+
+.contents li:hover,.contents li:focus {
+	background-color:#f5f5f5
+}
+
+.contents li a:focus,.contents li a:hover {
+	text-decoration:none;
+	color:#555;
+}
+
+.contents li:nth-of-type(1):hover,.contents li:nth-of-type(1):focus {
+	background-color:#fff;
+}
+
+.contents li:nth-of-type(1) a,.contents li:nth-of-type(1) a {
+	color:#555;
+}
+
