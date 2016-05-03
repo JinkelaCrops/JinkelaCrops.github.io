@@ -61,9 +61,9 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 <p>Notepad++是声名在外的出色的文本编辑器，个人建议用它替代Windows自带的Notepad。Notepad++的一个好处就是提供了方便的编码转换，<strong>格式</strong> &gt; <strong>转为UTF-8无BOM编码格式</strong> 就可以把你的ANSI编码文件转化为无BOM的UTF-8——这是主流的、支持广泛的编码格式。</p>
 <p>Notepad++也可以配置SAS。<strong>运行</strong> &gt; <strong>运行</strong> 然后输入程序名，就可以运行相关程序。和UltraEdit一样，Notepad++也预先定义了一些变量来传递文件名和路径名。</p>
 <ul>
-<li>$(FULL_CURRENT_PATH) : 当前文件全名</li>
-<li>$(CURRENT_DIRECTORY) : 当前路径全名</li>
-<li>$(NAME_PART) : 当前文件名字</li>
+<li><code>$(FULL_CURRENT_PATH)</code> : 当前文件全名</li>
+<li><code>$(CURRENT_DIRECTORY)</code> : 当前路径全名</li>
+<li><code>$(NAME_PART)</code> : 当前文件名字</li>
 </ul>
 <p>按照上面的方法，我们可以这样写：</p>
 <pre><code>&quot;D:\Softwares\SasWrap.wsf&quot; /sasprog:&quot;$(FULL_CURRENT_PATH)&quot;
