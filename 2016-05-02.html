@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="./css/MSwebCss.css">
 <!--script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script-->
-<link rel="shortcut icon" href="./picture/NA_s.png">
-<title>在编辑器里配置SAS</title>
 <link rel="stylesheet" href="./css/Highlight.js.css">
 <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<link rel="shortcut icon" href="./picture/NA_s.png">
 </head>
 <body>
 <div class="container docs">
 <div class="row">
+
+<title>在编辑器里配置SAS</title>
 
 <h1 id="-sas">在编辑器里配置SAS</h1>
 <p>由于以前已经提到过的<a href="http://weibo.com/p/230418b34f2e7b0102w93s">原因</a>，我打算在编辑器里面配置SAS，这样不用每次打开SAS软件了，并且我也找到了一种方法，就是使用UltraEdit配置<strong>用户工具</strong>。后来接触了VSCode、Sublime、Notepad++的一些功能，发现上述方法并不局限于UltraEdit，这些编辑器都可以启动外接程序。虽然方法大同小异，但是还是有一些小小的区别，下面我来总结一个。</p>
@@ -20,13 +21,13 @@
 <p>前面已经提到，可以编写VB代码然后保存为<code>.wsf</code>文件，然后在UltraEdit中调用这个文件来运行SAS；也可以直接把调用语句输入UltraEdit <strong>高级</strong> &gt; <strong>用户工具</strong> &gt; <strong>配置工具</strong> 的命令行。在UltraEdit的官网上有<a href="http://www.ultraedit.com/ultraedit-tour/sas-editor.html">相关说明</a>，其中给出了SAS社区Wiki上的一个<a href="http://www.sascommunity.org/wiki/Tips_for_sas_programming_with_ultraedit">做法</a>。这个就是我之前在博客里提到的方法。</p>
 <h3 id="-wsf-sas">方法一：运行<code>.wsf</code>文件调用SAS</h3>
 <p>可以在这个<a href="http://www.sascommunity.org/wiki/Batch-submission_WSH_Script">链接</a>查看<code>.wsf</code>文件的全部代码，或者点击<a href="./files/SasWrap.wsf">这里</a>直接下载该文件。</p>
-<p>将下载下来的<code>SasWrap.wsf</code>放在合适的位置，比如<code>C:\Users\用户名\Downloads\SasWrap.wsf</code>。打开UltraEdit，<strong>高级</strong> &gt; <strong>用户工具</strong> &gt; <strong>配置工具</strong>，你需要在菜单项名称里面起一个名字，比如“SAS”，然后在命令行里输入</p>
+<p>将下载下来的<code>SasWrap.wsf</code>放在合适的位置。打开UltraEdit，<strong>高级</strong> &gt; <strong>用户工具</strong> &gt; <strong>配置工具</strong>，你需要在菜单项名称里面起一个名字，比如“SAS”，然后在命令行里输入</p>
 <pre><code>&quot;C:\Users\用户名\Downloads\SasWrap.wsf&quot; /sasprog:&quot;%f&quot;
-</code></pre><p>这表示运行<code>C:\Users\用户名\Downloads\SasWrap.wsf</code>，并将<code>&quot;%f&quot;</code>作为参数传递给<code>sasprog</code>这个变量。在UltraEdit中<code>%f</code>给出你正在操作的当前文件的完整路径，而<code>sasprog</code>则是<code>SasWrap.wsf</code>中的一个变量，用来储存文件名。下面给出了选项示例：</p>
+</code></pre><p>这表示运行<code>SasWrap.wsf</code>，并将<code>&quot;%f&quot;</code>作为参数传递给<code>sasprog</code>这个变量。在UltraEdit中<code>%f</code>给出你正在操作的当前文件的完整路径，而<code>sasprog</code>则是<code>SasWrap.wsf</code>中的一个变量，用来储存文件名。下面给出了选项示例：</p>
 <p><img src="./picture/2016-05-02-01.jpg" alt="UltraEdit_SasWrap.wsf"></p>
 <h3 id="-">方法二：直接在命令行输入语句运行</h3>
 <p>从<code>SasWrap.wsf</code>的文件源码中，我们不难发现，该文件实际上调用WshShell运行了一条语句</p>
-<pre><code class="VisualBasic">RunLine =                       DQ &amp; SASExe   &amp; DQ _
+<pre><code>RunLine =                       DQ &amp; SASExe   &amp; DQ _
                  &amp; &quot; -sysin &quot; &amp; DQ &amp; SASProg  &amp; DQ _
                  &amp; &quot; -log   &quot; &amp; DQ &amp; LogFile  &amp; DQ _
                  &amp; &quot; -print &quot; &amp; DQ &amp; ListFile &amp; DQ _
@@ -52,8 +53,8 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 </ul>
 <p>所以利用上述的已知条件我们可以写一句这样的语句：</p>
 <pre><code>&quot;C:\Program Files\SASHome\SASFoundation\9.3\sas.exe&quot; -config &quot;C:\Program Files\SASHome\SASFoundation\9.3\nls\u8\sasv9.cfg&quot; -sysin &quot;%f&quot; -log &quot;%p%n.log&quot; -print &quot;%p%n.lst&quot;
-</code></pre><p>也就是以<code>C:\Program Files\SASHome\SASFoundation\9.3\nls\u8\sasv9.cfg</code>这个配置文件运行<code>sas.exe</code>，输入当前<code>test.sas</code>文件，输出以当前文件名<code>test</code>为名字的<code>.log</code>和<code>.lst</code>文件。</p>
-<p>这一切看上去都很合理，然而不幸的是，在UltraEdit中不能运行，结果是报错，为什么呢？后来研究了一下，可能是因为<code>-config</code>的参数<code>&quot;C:\Program Files\SASHome\SASFoundation\9.3\nls\u8\sasv9.cfg&quot;</code><br>中存在空格，UltraEdit在翻译给<code>cmd</code>的时候出现了问题！</p>
+</code></pre><p>也就是以<code>sasv9.cfg</code>这个配置文件运行<code>sas.exe</code>，输入当前<code>test.sas</code>文件，输出以当前文件名<code>test</code>为名字的<code>.log</code>和<code>.lst</code>文件。</p>
+<p>这一切看上去都很合理，然而不幸的是，在UltraEdit中不能运行，结果是报错，为什么呢？后来研究了一下，可能是因为<code>sasv9.cfg</code>的完整路径中存在空格，UltraEdit在翻译给<code>cmd</code>的时候出现了问题！</p>
 <p>有的同学会问，为什么要加入<code>-config ...</code>呢？事实上这是有必要的。很多时候，我们的编辑器默认使用的是UTF-8格式编码的文件，但是<code>sas.exe</code>只能识别ANSI格式编码。关于编码的故事<a href="https://www.zhihu.com/question/20650946">还有很多</a>，这里就不详细说了，只要知道问题的关键就是<code>sas.exe</code>不能识别UTF-8编码的文件。万幸的是，SAS9.3提供了Unicode编码支持，你可以在开始菜单的快捷方式里看到，SAS9.3 (Unicode支持)这个<code>.lnk</code>事实上是按照一个配置文件<code>sasv9.cfg</code>调用SAS的。在这里UltraEdit不能识别<code>sasv9.cfg</code>的路径而报错，我们可以把这个<code>sasv9.cfg</code>复制在一个没有空格的路径下，然后调用这个配置文件。</p>
 <pre><code>&quot;C:\Program Files\SASHome\SASFoundation\9.3\sas.exe&quot; -config &quot;D:\Softwares\GetRidofSpace\nlsu8sasv9.cfg&quot; -sysin &quot;%f&quot; -log &quot;%p%n.log&quot; -print &quot;%p%n.lst&quot;
 </code></pre><p>这样就可以运行了。如果我们检查<code>C:\Users\用户名\Documents\</code>路径，我们会看到<code>test.sas</code>、<code>test.log</code>、<code>test.lst</code>这三个文件。如果把<code>.log</code>和<code>.lst</code>添加到UltraEdit支持，我们可以直接在UltraEdit中查看日志和结果，这样编程时就摆脱了SAS软件的依赖。</p>
@@ -100,26 +101,28 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 </code></pre>
 <p>保存，然后在打开的<code>.sas</code>文件中按下<code class="keybinding">Ctrl+Shift+B</code>，就可以直接运行SAS了。VSCode同样支持分屏，可以分三个屏，同时观察<code>.sas</code>、<code>.log</code>、<code>.lst</code>。</p>
 <p><img src="./picture/2016-05-02-03.jpg" alt="VSCode_SAStask"></p>
-<p>但是VSCode有一点让我很不满意，就是不能够同时配置多个任务，执行不同的任务需要打开不同的工作空间，否则需要频繁修改<code>task.json</code>。如果我一边运行程序一边编译Markdown呢？就很麻烦了。我希望在后来VSCode可以改进这一点。当然有一些小问题比如列编辑：在Sublime中是<code>按住Shift+鼠标右键拖动</code>；Notepad++中是<code>按住Alt+鼠标左键拖动</code>；VSCode中只有在特定的几个格式比如<code>.css</code>和<code>.html</code>中才支持<code>按住Shift+按住Ctrl+鼠标左键拖动</code>进行列编辑。我想这里可以改进一下，应该不难。不过Notepad++可以支持空白处的列编辑，这一点还是相对有用的，可惜他不支持多行选择。</p>
+<p>但是VSCode有一点让我很不满意，就是不能够同时配置多个任务，执行不同的任务需要打开不同的工作空间，否则需要频繁修改<code>task.json</code>。如果我一边运行程序一边编译Markdown呢？就很麻烦了。我希望在后来VSCode可以改进这一点。当然有一些小问题比如列编辑：在Sublime中是<code class="keybinding">按住Shift+鼠标右键拖动</code>；Notepad++中是<code class="keybinding">按住Alt+鼠标左键拖动</code>；VSCode中只有在特定的几个格式比如<code>.css</code>和<code>.html</code>中才支持<code class="keybinding">按住Shift+按住Ctrl+鼠标左键拖动</code>进行列编辑。我想这里可以改进一下，应该不难。不过Notepad++可以支持空白处的列编辑，这一点还是相对有用的，可惜他不支持多行选择。</p>
 <p>VSCode的一个强大之处就在于它内生支持Git，这个功能非常好，省去了配置Git的一些麻烦：直接点击左边的侧栏中<img src="./picture/2016-05-02-04.jpg" alt="VSCode_Giticon">图标。</p>
 <p>关于Windows下Git的安装，建议首先安装<a href="https://chocolatey.org/"><code>chocolatey</code></a>，这是一个Windows下类似于Linux中<code>apt-get</code>的包管理器，然后使用<code>choco</code>命令就可以安装想要的包。</p>
 <pre><code>choco install git
 </code></pre><p>然后初始化Git，就可以在VSCode中轻松使用Git了。关于Git的详细介绍，请看<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">廖雪峰的Git教程</a>。</p>
 <p>不幸的是我好像没有找到Notepad++的Git插件。</p>
-<p>翻看VSCode安装目录我们会发现，VSCode是插件架构的，他的语法支持其实是插件形式的。这使得我们可以模仿着自己定义<a href="./files/sas.zip">SAS插件</a>，解压以后放在<code>.\Microsoft VS Code\resources\app\extensions\</code>下。其中使用了<code>.plist</code>来控制语法高亮，使用了<code>.configuration.json</code>来控制自动完成，使用了<code>package.json</code>来建立package。</p>
+<p>翻看VSCode安装目录我们会发现，VSCode是插件架构的，他的语法支持其实是插件形式的。这使得我们可以模仿着自己定义<a href="./files/sas.zip">SAS插件</a>，解压以后放在VSCode安装目录的插件文件夹下</p>
+<pre><code>D:\Softwares\Microsoft VS Code\resources\app\extensions\
+</code></pre><p>语法插件中使用了<code>.plist</code>来控制语法高亮，使用了<code>.configuration.json</code>来控制自动完成，使用了<code>package.json</code>来建立package。</p>
 <h2 id="-sublime-sas">使用Sublime配置SAS</h2>
 <p>Sublime Text 3是另一个让人感到惊艳的文本编辑器。和VSCode十分相似，也是通过一些配置文件来管理配置的，不过Sublime有自己独立的配置文件格式。Sublime的操作十分方便，更强大的是他的众多插件，使用起来当真是如虎添翼。支持列编辑，支持多行选择，支持自定义语言格式，支持Git（插件），支持配置任务，差不多我也就需要这些功能了。</p>
 <p>用Sublime配置SAS任务：<strong>Tools</strong> &gt; <strong>Build System</strong> &gt; <strong>New Build System...</strong>，会弹出一个新文件，输入这样的语句：</p>
-<pre><code class="json">{
+<pre><code>{
     &quot;cmd&quot;:[&quot;C://Program Files//SASHome//SASFoundation//9.3//sas.exe&quot;,&quot;-config&quot;,&quot;C://Program Files//SASHome//SASFoundation//9.3//nls//u8//sasv9.cfg&quot;,&quot;-sysin&quot;,&quot;$file&quot;]
 }
 </code></pre><p>如果使用之前的<code>SasWrap.wsf</code>运行就会报错，尚未查找到相关的错误原因。</p>
 <p>接下来把写好的文件保存在固定的目录下，Sublime就会每次启动就会添加支持。<strong>Preferences</strong> &gt; <strong>Browse Packages</strong> 可以查看用户自定义的package。这里我的文件夹是<code>SAS</code>，你可以起一个自己的名字。</p>
 <pre><code>C:\Users\用户名\AppData\Roaming\Sublime Text 3\Packages\SAS\SAS.sublime-build
 </code></pre><p>也可以添加SAS语法高亮，其源文件就是在VSCode中提到的SAS插件的<code>.plist</code>文件，在Sublime中需要修改后缀为<code>.tmLanguage</code>。把得到的<code>SAS.tmLanguage</code>放在<code>SAS.sublime-build</code>同目录下，也就是<code>SAS</code>文件夹下。</p>
-<p>Sublime也可以分屏，<code>Alt+Shift+1/2/3/4/5</code>就可以进行分屏：1个屏、2个屏、3个屏、4个屏（川字型）、4个屏（田字形）。这使得我们可以像VScode中一样进行方便的Debug，由于支持田字形分屏，视觉上比VSCode要好一些。</p>
+<p>Sublime也可以分屏，<code class="keybinding">Alt+Shift+1/2/3/4/5</code>就可以进行分屏：1个屏、2个屏、3个屏、4个屏（川字型）、4个屏（田字形）。这使得我们可以像VScode中一样进行方便的Debug，由于支持田字形分屏，视觉上比VSCode要好一些。</p>
 <p><img src="./picture/2016-05-02-05.jpg" alt="Sublime_SASBuild"></p>
-<p>在VSCode和Sublime中按下<code>Ctrl+Shift+P</code>都可以打开查找，建议在Sublime下安装<a href="https://packagecontrol.io/installation">Package Control</a>，这样在查找中输入<code>PCIP</code>就可以安装程序包。值得安装的有SublimeGit、IMESupport（中文输入法跟随，Win10自带微软输入法无效）、Markdown Editing、OmniMarkupPreviwer 和 MarkdownPreview，关于Markdown的包可以看简书上的教程：<a href="http://www.jianshu.com/p/31d284b009ae">Sublime编写Markdown</a>。Markdown是一种轻型标记语言，用来写博客很方便。关于Markdown的介绍网络上已经有很多了：<a href="http://baike.baidu.com/view/2311114.htm">Markdown-Baidubaike</a>、<a href="https://github.com/chjj/marked">Marked</a>。顺便说一句，对于Markdown我是不满意的，我计划学习Javascript和并编写自己的Markdown Phraser，其实在我看来直接用Html格式书写并没有什么不妥之处，真的，Markdown不过是改头换面了一下，对于用户自定义的支持很差。</p>
+<p>在VSCode和Sublime中按下<code class="keybinding">Ctrl+Shift+P</code>都可以打开查找，建议在Sublime下安装<a href="https://packagecontrol.io/installation">Package Control</a>，这样在查找中输入<code>PCIP</code>就可以安装程序包。值得安装的有SublimeGit、IMESupport（中文输入法跟随，Win10自带微软输入法无效）、Markdown Editing、OmniMarkupPreviwer 和 MarkdownPreview，关于Markdown的包可以看简书上的教程：<a href="http://www.jianshu.com/p/31d284b009ae">Sublime编写Markdown</a>。Markdown是一种轻型标记语言，用来写博客很方便。关于Markdown的介绍网络上已经有很多了：<a href="http://baike.baidu.com/view/2311114.htm">Markdown-Baidubaike</a>、<a href="https://github.com/chjj/marked">Marked</a>。顺便说一句，对于Markdown我是不满意的，我计划学习Javascript和并编写自己的Markdown Phraser，其实在我看来直接用Html格式书写并没有什么不妥之处，真的，Markdown不过是改头换面了一下，对于用户自定义的支持很差。</p>
 <p>Sublime是一个不可多得的编辑器，不过他要钱——450RMB，当然也可以用未注册版本的。我考虑了一下，虽然Sublime我也用，但还是主力用VSCode+Notepad++吧。</p>
 <p>暂且就介绍到这里吧。啰啰嗦嗦讲下来，把几个编辑器的一些特性比较也讲进去了。关于没有安装SAS到注册表，而需要修改<code>SasWrap.wsf</code>的内容我就不在这里多说了，需要的话可以看看<a href="http://weibo.com/p/230418b34f2e7b0102w93s">在Win10上使用绿色版SAS9.3</a>的例子。</p>
 <p>最后告诫一下自己：编辑器是次要的，关键是多练代码！唉，我还有很长的路要走啊！</p>
@@ -129,6 +132,3 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 </div>
 </body>
 </html>
-
-
-
