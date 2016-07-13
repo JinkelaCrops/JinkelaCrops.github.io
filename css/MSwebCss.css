@@ -211,6 +211,7 @@ pre code {
 blockquote {
 	padding:1rem 2rem;
 	margin:0 0 2rem;
+	font-family: "Times New Roman","STKaiti","STFangsong",serif;
 	font-size:1.75rem;
 	border-left:0.5rem solid #eee;
 }
