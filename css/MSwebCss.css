@@ -149,7 +149,7 @@ em {
 }
 
 .docs .keybinding {
-	font-family:Menlo,Monaco,Consolas,Courier New,monospace;
+	font-family:Consolas,Menlo,Monaco,"Courier New",monospace;
 	padding:2px 4px;
 	font-size:90%;
 	color:#0072be;
@@ -175,7 +175,7 @@ img {
 }
 
 code,kbd,pre,samp {
-	font-family:Menlo,Monaco,Consolas,"Courier New",monospace
+	font-family:Consolas,Menlo,Monaco,"Courier New",monospace
 }
 
 code {
