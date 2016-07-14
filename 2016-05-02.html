@@ -74,8 +74,8 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 <p>不仅如此，我们还可以做一些更有趣的事情。由于Notepad++可以分屏，可以实时更新显示的文件，我们用不着每次都打开<code>.log</code>和<code>.lst</code>，我们可以直接地这样写</p>
 <pre><code>&quot;C:\Program Files\SASHome\SASFoundation\9.3\sas.exe&quot; -config &quot;C:\Program Files\SASHome\SASFoundation\9.3\nls\u8\sasv9.cfg&quot; -sysin &quot;$(FULL_CURRENT_PATH)&quot;
 </code></pre><p>SAS会自动地在当前目录下更新<code>.log</code>和<code>.lst</code>，你可能需要在SAS中的 <strong>工具</strong> &gt; <strong>选项</strong> &gt; <strong>参数选择</strong> &gt; <strong>结果</strong> &gt; <strong>结果选项</strong> 中勾选<strong>生成后立即查看结果</strong>，否则的话SAS可能不会生成<code>.lst</code>文件，因为我们简化了语句。</p>
-<p>保存这个语句到快捷键，比如<code class="keybinding">Ctrl+Shift+B</code>。把生成的<code>.log</code>和<code>.lst</code>打开在右边的分屏栏里面（在文件标签上 <strong>右键</strong> &gt; <strong>移动到另一视图</strong>），然后在Notepad++中 <strong>设置</strong> &gt; <strong>首选项</strong> &gt; <strong>其他</strong> &gt; <strong>自动检测文件状态</strong> 勾选<strong>自动更新文件</strong>。我们直接按下快捷键<code class="keybinding">Ctrl+Shift+B</code>就可以运行SAS，对于Debug来说这将会十分方便。</p>
-<p><img src="./picture/2016-05-02-02.jpg" alt="Notepadplusplus_SASkeybinding"></p>
+<p>保存这个语句到快捷键，比如<code class="kbd">Ctrl+Shift+B</code>。把生成的<code>.log</code>和<code>.lst</code>打开在右边的分屏栏里面（在文件标签上 <strong>右键</strong> &gt; <strong>移动到另一视图</strong>），然后在Notepad++中 <strong>设置</strong> &gt; <strong>首选项</strong> &gt; <strong>其他</strong> &gt; <strong>自动检测文件状态</strong> 勾选<strong>自动更新文件</strong>。我们直接按下快捷键<code class="kbd">Ctrl+Shift+B</code>就可以运行SAS，对于Debug来说这将会十分方便。</p>
+<p><img src="./picture/2016-05-02-02.jpg" alt="Notepadplusplus_SASkbd"></p>
 <p>对于用户设置的运行快捷键和运行代码，Notepad++没有提供可供修改的接口。不过我们可以在下面的文件中找到配置，自行修改。</p>
 <pre><code>C:\Users\用户名\AppData\Roaming\Notepad++\shortcuts.xml
 </code></pre><p>当然有点不足的是，这种自动更新在Notepad++中可能偶尔会失效，需要手动刷新一次才行。对于这种不稳定我还没有找到解决办法，所以后来我转向了其他编辑器。顺便说一句，在Notepad++的<a href="https://notepad-plus-plus.org/community/category/4/help-wanted">社区</a>和<a href="http://docs.notepad-plus-plus.org/index.php/Main_Page">Wiki</a>中有很多相关的信息，比如<a href="http://docs.notepad-plus-plus.org/index.php/Compiling_Source_Code">编译源码</a>、<a href="http://docs.notepad-plus-plus.org/index.php/Defining_User_Commands">自建命令</a>、<a href="http://docs.notepad-plus-plus.org/index.php/External_Programs">外部程序</a>等。你可以在Notepad++的Wiki上找到<a href="http://docs.notepad-plus-plus.org/index.php?title=User_Defined_Language_Files">语言支持</a>，或者直接在<a href="http://hafniumcity.com/userDefineLang.xml">这里</a>下载SAS代码高亮配置。</p>
@@ -83,7 +83,7 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 <p>VSCode是微软最近出的、跨平台的代码编辑器，我现在就在用VSCode写Markdown。相比巨无霸VS，VSCode简单轻便得不像实力派——然而他恰恰功能强大、稳定性好。VSCode采用<code>.json</code>格式配置几乎全部的设置，<strong>文件</strong> &gt; <strong>首选项</strong> &gt; <strong>用户设置</strong> 你就可以看到全部的配置并且进行自定义，非常清晰而且方便查找和管理，接下来要介绍的Sublime也是这样的编辑器。VSCode目前是1.0版本，有一些小问题，还在不断完善中，但是免费，我想这可能<a href="https://www.zhihu.com/question/29984607">俘获了很多程序员的芳心</a>。</p>
 <p>VSCode使用<code>task.json</code>配置任务。官方的文档已经解释的很详细了：<a href="https://code.visualstudio.com/docs/editor/tasks">通过任务整合外部工具</a>。这里举一个配置SAS的例子。</p>
 <p>由于可以和Notepad++一样自动更新文件，使用VSCode配置SAS任务可以不用输出<code>.log</code>和<code>.lst</code>。这里和上面一样给出了VSCode中预定变量传递文件名和目录名的例子：<a href="https://code.visualstudio.com/docs/editor/tasks#_variable-substitution">变量替代</a>。</p>
-<p>按下<code class="keybinding">Ctrl+Shift+B</code>，选择配置其他任务，在弹出的<code>task.json</code>中输入以下的命令</p>
+<p>按下<code class="kbd">Ctrl+Shift+B</code>，选择配置其他任务，在弹出的<code>task.json</code>中输入以下的命令</p>
 <pre><code class="json">{
     &quot;version&quot;: &quot;0.1.0&quot;,
     &quot;command&quot;: &quot;C://Program Files//SASHome//SASFoundation//9.3//sas.exe&quot;,
@@ -99,9 +99,9 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
     &quot;showOutput&quot;: &quot;never&quot;
 }
 </code></pre>
-<p>保存，然后在打开的<code>.sas</code>文件中按下<code class="keybinding">Ctrl+Shift+B</code>，就可以直接运行SAS了。VSCode同样支持分屏，可以分三个屏，同时观察<code>.sas</code>、<code>.log</code>、<code>.lst</code>。</p>
+<p>保存，然后在打开的<code>.sas</code>文件中按下<code class="kbd">Ctrl+Shift+B</code>，就可以直接运行SAS了。VSCode同样支持分屏，可以分三个屏，同时观察<code>.sas</code>、<code>.log</code>、<code>.lst</code>。</p>
 <p><img src="./picture/2016-05-02-03.jpg" alt="VSCode_SAStask"></p>
-<p>但是VSCode有一点让我很不满意，就是不能够同时配置多个任务，执行不同的任务需要打开不同的工作空间，否则需要频繁修改<code>task.json</code>。如果我一边运行程序一边编译Markdown呢？就很麻烦了。我希望在后来VSCode可以改进这一点。当然有一些小问题比如列编辑：在Sublime中是<code class="keybinding">按住Shift+鼠标右键拖动</code>；Notepad++中是<code class="keybinding">按住Alt+鼠标左键拖动</code>；VSCode中只有在特定的几个格式比如<code>.css</code>和<code>.html</code>中才支持<code class="keybinding">按住Shift+按住Ctrl+鼠标左键拖动</code>进行列编辑。我想这里可以改进一下，应该不难。不过Notepad++可以支持空白处的列编辑，这一点还是相对有用的，可惜他不支持多行选择。</p>
+<p>但是VSCode有一点让我很不满意，就是不能够同时配置多个任务，执行不同的任务需要打开不同的工作空间，否则需要频繁修改<code>task.json</code>。如果我一边运行程序一边编译Markdown呢？就很麻烦了。我希望在后来VSCode可以改进这一点。当然有一些小问题比如列编辑：在Sublime中是<code class="kbd">按住Shift+鼠标右键拖动</code>；Notepad++中是<code class="kbd">按住Alt+鼠标左键拖动</code>；VSCode中只有在特定的几个格式比如<code>.css</code>和<code>.html</code>中才支持<code class="kbd">按住Shift+按住Ctrl+鼠标左键拖动</code>进行列编辑。我想这里可以改进一下，应该不难。不过Notepad++可以支持空白处的列编辑，这一点还是相对有用的，可惜他不支持多行选择。</p>
 <p>VSCode的一个强大之处就在于它内生支持Git，这个功能非常好，省去了配置Git的一些麻烦：直接点击左边的侧栏中<img src="./picture/2016-05-02-04.jpg" alt="VSCode_Giticon">图标。</p>
 <p>关于Windows下Git的安装，建议首先安装<a href="https://chocolatey.org/"><code>chocolatey</code></a>，这是一个Windows下类似于Linux中<code>apt-get</code>的包管理器，然后使用<code>choco</code>命令就可以安装想要的包。</p>
 <pre><code>choco install git
@@ -120,9 +120,9 @@ WinShell.Run(RunLine, SHOWMINIMIZED, True)
 <p>接下来把写好的文件保存在固定的目录下，Sublime就会每次启动就会添加支持。<strong>Preferences</strong> &gt; <strong>Browse Packages</strong> 可以查看用户自定义的package。这里我的文件夹是<code>SAS</code>，你可以起一个自己的名字。</p>
 <pre><code>C:\Users\用户名\AppData\Roaming\Sublime Text 3\Packages\SAS\SAS.sublime-build
 </code></pre><p>也可以添加SAS语法高亮，其源文件就是在VSCode中提到的SAS插件的<code>.plist</code>文件，在Sublime中需要修改后缀为<code>.tmLanguage</code>。把得到的<code>SAS.tmLanguage</code>放在<code>SAS.sublime-build</code>同目录下，也就是<code>SAS</code>文件夹下。</p>
-<p>Sublime也可以分屏，<code class="keybinding">Alt+Shift+1/2/3/4/5</code>就可以进行分屏：1个屏、2个屏、3个屏、4个屏（川字型）、4个屏（田字形）。这使得我们可以像VScode中一样进行方便的Debug，由于支持田字形分屏，视觉上比VSCode要好一些。</p>
+<p>Sublime也可以分屏，<code class="kbd">Alt+Shift+1/2/3/4/5</code>就可以进行分屏：1个屏、2个屏、3个屏、4个屏（川字型）、4个屏（田字形）。这使得我们可以像VScode中一样进行方便的Debug，由于支持田字形分屏，视觉上比VSCode要好一些。</p>
 <p><img src="./picture/2016-05-02-05.jpg" alt="Sublime_SASBuild"></p>
-<p>在VSCode和Sublime中按下<code class="keybinding">Ctrl+Shift+P</code>都可以打开查找，建议在Sublime下安装<a href="https://packagecontrol.io/installation">Package Control</a>，这样在查找中输入<code>PCIP</code>就可以安装程序包。值得安装的有SublimeGit、IMESupport（中文输入法跟随，Win10自带微软输入法无效）、Markdown Editing、OmniMarkupPreviwer 和 MarkdownPreview，关于Markdown的包可以看简书上的教程：<a href="http://www.jianshu.com/p/31d284b009ae" name="Markdown">Sublime编写Markdown</a>。Markdown是一种轻型标记语言，用来写博客很方便。关于Markdown的介绍网络上已经有很多了：<a href="http://baike.baidu.com/view/2311114.htm">Markdown-Baidubaike</a>、<a href="https://github.com/chjj/marked">Marked</a>。顺便说一句，对于Markdown我是不满意的，我计划学习Javascript和并编写自己的Markdown Phraser，其实在我看来直接用Html格式书写并没有什么不妥之处，真的，Markdown不过是改头换面了一下，对于用户自定义的支持很差。</p>
+<p>在VSCode和Sublime中按下<code class="kbd">Ctrl+Shift+P</code>都可以打开查找，建议在Sublime下安装<a href="https://packagecontrol.io/installation">Package Control</a>，这样在查找中输入<code>PCIP</code>就可以安装程序包。值得安装的有SublimeGit、IMESupport（中文输入法跟随，Win10自带微软输入法无效）、Markdown Editing、OmniMarkupPreviwer 和 MarkdownPreview，关于Markdown的包可以看简书上的教程：<a href="http://www.jianshu.com/p/31d284b009ae" name="Markdown">Sublime编写Markdown</a>。Markdown是一种轻型标记语言，用来写博客很方便。关于Markdown的介绍网络上已经有很多了：<a href="http://baike.baidu.com/view/2311114.htm">Markdown-Baidubaike</a>、<a href="https://github.com/chjj/marked">Marked</a>。顺便说一句，对于Markdown我是不满意的，我计划学习Javascript和并编写自己的Markdown Phraser，其实在我看来直接用Html格式书写并没有什么不妥之处，真的，Markdown不过是改头换面了一下，对于用户自定义的支持很差。</p>
 <p>Sublime是一个不可多得的编辑器，不过他要钱——450RMB，当然也可以用未注册版本的。我考虑了一下，虽然Sublime我也用，但还是主力用VSCode和Notepad++吧。</p>
 <p>暂且就介绍到这里吧。啰啰嗦嗦讲下来，把几个编辑器的一些特性比较也讲进去了。关于没有安装SAS到注册表，而需要修改<code>SasWrap.wsf</code>的内容我就不在这里多说了，需要的话可以看看<a href="http://weibo.com/p/230418b34f2e7b0102w93s">在Win10上使用绿色版SAS9.3</a>的例子。</p>
 <p>最后告诫一下自己：编辑器是次要的，关键是多练代码！唉，我还有很长的路要走啊！</p>

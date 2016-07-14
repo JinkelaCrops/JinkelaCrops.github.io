@@ -23,7 +23,7 @@ writing Markdown text, save the file with the .md extension and then you
  can toggle the visualization of the editor between the code and the 
 preview of the Markdown file; obviously, you can also open an existing 
 Markdown file and start working with it. To switch between views you 
-just have to press <code class="keybinding">Ctrl+Shift+V</code> in the editor. You can view the preview side-by-side ( <code class="keybinding">Ctrl+K V</code> ) with the file you are editing and see changes reflected in real-time as you edit.</p>
+just have to press <code class="kbd">Ctrl+Shift+V</code> in the editor. You can view the preview side-by-side ( <code class="kbd">Ctrl+K V</code> ) with the file you are editing and see changes reflected in real-time as you edit.</p>
 <p>Here is an example with a very simple file.</p>
 <p><img src="MarkdownandVSCode.md_files/Markdown_preview.png" alt="Markdown Preview"></p>
 <blockquote>
@@ -51,7 +51,7 @@ h1 {
 }
 </code></pre>
 <h2 id="snippets-for-markdown">Snippets for Markdown</h2>
-<p>There are several built-in Markdown snippets included in VS Code - simply press <code class="keybinding">Ctrl+Space</code> (Trigger Suggest) and we will give you a context specific list of suggestions.</p>
+<p>There are several built-in Markdown snippets included in VS Code - simply press <code class="kbd">Ctrl+Space</code> (Trigger Suggest) and we will give you a context specific list of suggestions.</p>
 <blockquote>
 <p><strong>Tip:</strong> You can add in your own User Defined Snippets for Markdown. Take a look at <a href="http://code.visualstudio.com/docs/customization/userdefinedsnippets">User Defined</a> to find out how.</p>
 </blockquote>
@@ -84,7 +84,7 @@ Things you'll need:
 ## Section Titles
 &gt; This block quote is here for your information.
 </code></pre><h3 id="step-3-create-tasks-json">Step 3: Create tasks.json</h3>
-<p>The next step is to set up the task configuration file <code>tasks.json</code>. To do this, open the <strong>Command Palette</strong> with <code class="keybinding">F1</code> and type in <strong>Configure Task Runner</strong>, press <code class="keybinding">Enter</code> to select it.</p>
+<p>The next step is to set up the task configuration file <code>tasks.json</code>. To do this, open the <strong>Command Palette</strong> with <code class="kbd">F1</code> and type in <strong>Configure Task Runner</strong>, press <code class="kbd">Enter</code> to select it.</p>
 <p>It will present a list of possible <code>tasks.json</code> templates to choose from. Select <code>Others</code> since we
 want to run an external command.</p>
 <p>This generate a <code>tasks.json</code> file in your workspace <code>.vscode</code> folder with the following content:</p>
@@ -111,12 +111,12 @@ want to run an external command.</p>
 </code></pre>
 <blockquote>
 <p><strong>Tips:</strong> While the sample is there to help with common configuration settings, IntelliSense is available
-for the <code>tasks.json</code> file as well to help you along. Use <code class="keybinding">Ctrl+Space</code> to see the available settings.</p>
+for the <code>tasks.json</code> file as well to help you along. Use <code class="kbd">Ctrl+Space</code> to see the available settings.</p>
 </blockquote>
 <p>Under the covers, we interpret <strong>marked</strong> as an external task runner exposing exactly one task: the compiling
 of Markdown files into HTML files. The command we run is <code>marked sample.md -o sample.html</code>.</p>
 <h3 id="step-4-run-the-build-task">Step 4: Run the Build Task</h3>
-<p>As this is the only task in the file, you can execute it by simply pressing <code class="keybinding">Ctrl+Shift+B</code>(<strong>Run Build Task</strong>).At this point, you should see an additional file show up in the file list <code>sample.html</code>.</p>
+<p>As this is the only task in the file, you can execute it by simply pressing <code class="kbd">Ctrl+Shift+B</code>(<strong>Run Build Task</strong>).At this point, you should see an additional file show up in the file list <code>sample.html</code>.</p>
 <p>The sample Markdown file did not have any compile problems, so by running the task all that happened was a corresponding
 <code>sample.html</code> file was created.</p>
 <h2 id="automating-markdown-compilation">Automating Markdown compilation</h2>
@@ -178,7 +178,7 @@ on the default Gulp task we just created.</p>
 <p>At this point, if you create and/or modify other Markdown files, you 
 will see the respective HTML files generated and/or changes reflected on
  save. You can also enable <a href="http://code.visualstudio.com/docs/editor/codebasics#_saveauto-save">Auto Save</a> to make things even more streamlined.</p>
-<p>If you want to stop the watch, you can press <code class="keybinding">Ctrl+Shift+B</code> again and click <strong>Terminate Running Task</strong>in the message box. or you can use the <strong>Command Palette</strong> with <code class="keybinding">F1</code> and find the terminate command there.</p>
+<p>If you want to stop the watch, you can press <code class="kbd">Ctrl+Shift+B</code> again and click <strong>Terminate Running Task</strong>in the message box. or you can use the <strong>Command Palette</strong> with <code class="kbd">F1</code> and find the terminate command there.</p>
 <h2 id="next-steps">Next Steps</h2>
 <p>Read on to find out about:</p>
 <ul>
