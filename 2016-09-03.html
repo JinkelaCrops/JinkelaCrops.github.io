@@ -120,13 +120,26 @@
         </tbody>
     </table>
     还有一些运算规律收录在百度百科的<a href="http://baike.baidu.com/view/397415.htm">逻辑运算</a>词条，可以自行查阅。我们将会用到的比较多的公式是：
-    <pre>
-    <code><ul>
-        <li>A∧B=¬((¬A)∨(¬B))</li>
-        <li>A∧(B∨C)=(A∨B)∧(A∨C)</li>
-        </ul></code>
-    </pre>
-
+    <ul>
+        <li><code>A AND B = NOT((NOT A) OR (NOT B))</code></li>
+        <li><code>A AND (B OR C) = (A AND B) OR (A AND C)</code></li>
+        <li><code>A XOR B = ((NOT A) AND B) OR (A AND (NOT B))</code></li>
+    </ul>
+    我们对最后一个公式做一个解释。<code class="kbd">XOR</code>就是相同为0，不同为1，从下面的表我们可以看出计算过程：
+    <table>
+        <thead>
+        <tr><td>A</td><td>B</td><td>A XOR B</td>
+            <td>NOT A</td><td>NOT B</td><td>(NOT A) AND B</td><td>A AND (NOT B)</td>
+            <td>((NOT A) AND B) OR (A AND (NOT B))</td></tr>
+        </thead>
+        <tbody>
+        <tr><td><code>1</code></td><td><code>1</code></td><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td></tr>
+        <tr><td><code>1</code></td><td><code>0</code></td><td><code>1</code></td><td><code>0</code></td><td><code>1</code></td><td><code>0</code></td><td><code>1</code></td><td><code>1</code></td></tr>
+        <tr><td><code>0</code></td><td><code>1</code></td><td><code>1</code></td><td><code>1</code></td><td><code>0</code></td><td><code>1</code></td><td><code>0</code></td><td><code>1</code></td></tr>
+        <tr><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td><td><code>1</code></td><td><code>1</code></td><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td></tr>
+        </tbody>
+    </table>
+    
 </blockquote>
 <p></p>
 
