@@ -122,10 +122,17 @@
 <p>一，使用无比较器的<code class="kbd">⊕</code>门。高一些，但是占地面积小。</p>
 <p><img src="./picture/2016-09-04-7_jiafa1.png" alt="jiafa1"></p>
 <p>二，使用有比较器的<code class="kbd">⊕</code>门。矮一些，但是占地面积大。</p>
-<p><img src="./picture/2016-09-04-7_jiafa2.png" alt="jiafa2"></p>
+<p><img src="./picture/2016-09-04-8_jiafa2.png" alt="jiafa2"></p>
 
 <h2>乘法器</h2>
+<p>乘法的原理相信大家不陌生，如下给出了十进制乘法的一个例子。</p>
+<p><img src="./picture/2016-09-04-09_chengfa.jpg" alt="chengfa"></p>
+<p>而二进制乘法则更为简单，因为十进制依靠99乘法表进行计算，而二进制只需要11乘法表——甚至不需要考虑进位，因为一位的二进制乘法不会产生进位。一位的二进制乘法其实本质上就是<code class="kbd">∧</code>门。</p>
+<p><img src="./picture/2016-09-04-10_chengfa2.jpg" alt="chengfa2"></p>
+<p>在做成Minecraft中的实体时，需要考虑占地面积的问题，如果按照上图进行排布，会占据大量空间且利用效率底下，我们可以做以下改进：每一次乘法以后，将其往后移一位，再与之后的乘法结果相加。这种方法叫错位相加，如图从下面开始往右再往上的黄色区域就是乘法结果。</p>
+<p><img src="./picture/2016-09-04-11_chengfa3.jpg" alt="chengfa3"></p>
 <p></p>
+
 
 <h2>减法器</h2>
 <p></p>
