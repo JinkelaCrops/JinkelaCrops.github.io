@@ -72,7 +72,7 @@
 <blockquote>
     我们下面还会接触到一些逻辑运算。在这里我们先简单介绍一下。
     基本的三个逻辑符号就是与（<code class="kbd">AND</code>，<code class="kbd">∧</code>）、或（<code class="kbd">OR</code>，<code class="kbd">∨</code>）、非（<code class="kbd">NOT</code>，<code class="kbd">¬</code>），计算规则如下：
-    <img src="./picture/2016-09-03-03_jisuan.jpg" alt="jisuan">
+    <p><img src="./picture/2016-09-03-03_jisuan.jpg" alt="jisuan"></p>
     还有一些运算规律收录在百度百科的<a href="http://baike.baidu.com/view/397415.htm">逻辑运算</a>词条，可以自行查阅。我们将会用到的比较多的公式是：
     <ul>
         <li><code>A AND B = NOT((NOT A) OR (NOT B))</code></li>
@@ -80,7 +80,7 @@
         <li><code>A XOR B = ((NOT A) AND B) OR (A AND (NOT B))</code></li>
     </ul>
     我们对最后一个公式做一个解释。异或（<code class="kbd">XOR</code>，<code class="kbd">⊕</code>）就是相同为0，不同为1，从下面的表我们可以看出计算过程：
-    <img src="./picture/2016-09-03-04_XOR.jpg" alt="XOR">
+    <p><img src="./picture/2016-09-03-04_XOR.jpg" alt="XOR"></p>
     在下文我们只用逻辑符号（<code class="kbd">∧</code>，<code class="kbd">∨</code>，<code class="kbd">¬</code>，<code class="kbd">⊕</code>）进行推导。
 
 </blockquote>
@@ -89,19 +89,21 @@
 <code>A1⊕B1=(¬A1∧B1)∨(A1∧¬B1)=¬(A1∨¬B1)∨¬(¬A1∨B1)</code>
 </pre>
 <p>我们可以分两种情况表示：</p>
-<p><code>B1</code>是给定的，这个时候，<code>B1</code>和<code>¬B1</code>可以分开表示，于是简化了电路。我们有横竖两个方案。</p>
+<h3><code>B1</code>是给定的</h3>
+<p>这个时候，<code>B1</code>和<code>¬B1</code>可以分开表示，于是简化了电路。我们有横竖两个方案。</p>
 <p>一，横放，如图中右边开关就是<code>A1</code>，左边上面的开关就是<code>¬B1</code>，左边下面的开关就是<code>B1</code>，左边的两个开关是给定的，不变化，从而只变化右边的输入<code>A1</code>。可以看到此处<code>B1</code>恒等于0，而右边输入<code>A1</code>也为0，输出结果是0，于是这是一个<code class="kbd">⊕</code>。</p>
-<img src="./picture/2016-09-04-01_XOR1.png" alt="XOR1">
+<p><img src="./picture/2016-09-04-01_XOR1.png" alt="XOR1"></p>
 <p>二，我们给出一个竖放的版本，其结果在上方。原理是类似的。</p>
-<img src="./picture/2016-09-04-04_XOR4.png" alt="XOR4">
-<p><code>B1</code>不是给定的，这个时候<code>B1</code>与<code>A1</code>地位等同。根据以前的Blog，我们现在有两种表示方案。</p>
+<p><img src="./picture/2016-09-04-04_XOR4.png" alt="XOR4"></p>
+<h3><code>B1</code>不是给定的</h3>
+<p>这个时候<code>B1</code>与<code>A1</code>地位等同。根据以前的Blog，我们现在有两种表示方案。</p>
 <p>一，这种方案是最小巧的，占地面积小，与相邻方块影响小（中继器不容易受干扰），但是高度较高有4层。</p>
-<img src="./picture/2016-09-04-02_XOR2.jpg" alt="XOR2">
+<p><img src="./picture/2016-09-04-02_XOR2.jpg" alt="XOR2"></p>
 <p>二，这种方案使用到了比较器，占地面积大，与相邻方块影响大（红石导线易受干扰），但是高度只有1层。</p>
-<img src="./picture/2016-09-04-03_XOR3.png" alt="XOR3">
+<p><img src="./picture/2016-09-04-03_XOR3.png" alt="XOR3"></p>
 <p>选择什么样的方案需要因时因地制宜。在我们这里只需要<code>B1</code>给定的<code class="kbd">⊕</code>门。<code class="kbd">⊕</code>门有一横一竖两种方案，对应的二进制0000-1001转十进制0-9也有一竖一横两种方案。注意第一张图是二进制0000-1111转十进制0-15的，是一个扩展方案，两张图中的输入都是<code>Bin(0111)=Dec(7)</code>。</p>
-<img src="./picture/2016-09-04-05_MBin2Dec.png" alt="MBin2Dec">
-<img src="./picture/2016-09-04-05_MBin2Dec2.png" alt="MBin2Dec2">
+<p><img src="./picture/2016-09-04-05_MBin2Dec.png" alt="MBin2Dec"></p>
+<p><img src="./picture/2016-09-04-05_MBin2Dec2.png" alt="MBin2Dec2"></p>
 
 <h2>加法器</h2>
 <p>加法器一直是我们关注的重点，在<a href="http://blog.sina.com.cn/s/blog_b34f2e7b0102w9pg.html">上一个Blog</a>中我们已经得出了结论，那就是加法器就是把若干个全加器排列起来，而全加器是这样的一个东西：</p>
@@ -115,9 +117,9 @@
 </pre>
 <p>经过多少次复杂的测试，最终我找到了比较好的两个方案，分别使用上文提到的两种不同的<code class="kbd">⊕</code>门。</p>
 <p>一，使用无比较器的<code class="kbd">⊕</code>门。高一些，但是占地面积小。</p>
-<img src="./picture/2016-09-04-7_jiafa1.png" alt="jiafa1">
+<p><img src="./picture/2016-09-04-7_jiafa1.png" alt="jiafa1"></p>
 <p>二，使用有比较器的<code class="kbd">⊕</code>门。矮一些，但是占地面积大。</p>
-<img src="./picture/2016-09-04-7_jiafa2.png" alt="jiafa2">
+<p><img src="./picture/2016-09-04-7_jiafa2.png" alt="jiafa2"></p>
 
 <h2>乘法器</h2>
 <p></p>
