@@ -74,10 +74,11 @@
     基本的三个逻辑符号就是与（<code class="kbd">AND</code>，<code class="kbd">∧</code>）、或（<code class="kbd">OR</code>，<code class="kbd">∨</code>）、非（<code class="kbd">NOT</code>，<code class="kbd">¬</code>），计算规则如下：
     <p><img src="./picture/2016-09-03-03_jisuan.jpg" alt="jisuan"></p>
     还有一些运算规律收录在百度百科的<a href="http://baike.baidu.com/view/397415.htm">逻辑运算</a>词条，可以自行查阅。我们将会用到的比较多的公式是：
-<pre><code>A AND B = NOT((NOT A) OR (NOT B))
+<pre>
+<code>A AND B = NOT((NOT A) OR (NOT B))
 A AND (B OR C) = (A AND B) OR (A AND C)
-A XOR B = ((NOT A) AND B) OR (A AND (NOT B))
-</code></pre>
+A XOR B = ((NOT A) AND B) OR (A AND (NOT B))</code>
+</pre>
     我们对最后一个公式做一个解释。异或（<code class="kbd">XOR</code>，<code class="kbd">⊕</code>）就是相同为0，不同为1，从下面的表我们可以看出计算过程：
     <p><img src="./picture/2016-09-03-04_XOR.jpg" alt="XOR"></p>
     在下文我们只用逻辑符号（<code class="kbd">∧</code>，<code class="kbd">∨</code>，<code class="kbd">¬</code>，<code class="kbd">⊕</code>）进行推导。
