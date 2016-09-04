@@ -79,7 +79,7 @@
 <pre>
     <code>(NOT(A1 XOR B1)) AND (NOT(A2 XOR B2)) AND (NOT(A3 XOR B3)) AND (NOT(A4 XOR B4))</code>
 </pre>
-<p>这里XOR就是相同取0，不同取1。</p>
+<p>这里<code class="kbd">XOR</code>就是相同取0，不同取1。</p>
 <p>由于在Minecraft中<code class="kbd">AND</code>的实现方式困难，我们把他全部转化成<code class="kbd">OR</code>和<code class="kbd">NOT</code>（<code class="kbd">OR</code>操作只要红石导线相连就行了，在红石系统里面是最简单的门电路）。这样可以简化电路设计。</p>
 <pre>
 <code>(NOT(A1 XOR B1)) AND (NOT(A2 XOR B2)) AND (NOT(A3 XOR B3)) AND (NOT(A4 XOR B4))
@@ -98,6 +98,16 @@
                         <tr><td><code>1</code></td><td><code>0</code></td><td><code>0</code></td></tr>
                         <tr><td><code>0</code></td><td><code>1</code></td><td><code>0</code></td></tr>
                         <tr><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td></tr>
+                </td>
+                <td>
+                        <tr><td><code>1</code></td><td><code>1</code></td><td><code>1</code></td></tr>
+                        <tr><td><code>1</code></td><td><code>0</code></td><td><code>1</code></td></tr>
+                        <tr><td><code>0</code></td><td><code>1</code></td><td><code>1</code></td></tr>
+                        <tr><td><code>0</code></td><td><code>0</code></td><td><code>0</code></td></tr>
+                </td>
+                <td>
+                        <tr><td><code>1</code></td><td><code>0</code></td></tr>
+                        <tr><td><code>0</code></td><td><code>1</code></td></tr>
                 </td>
         </tbody>
     </table>
