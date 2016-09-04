@@ -89,12 +89,14 @@
 <code>A1⊕B1=(¬A1∧B1)∨(A1∧¬B1)=¬(A1∨¬B1)∨¬(¬A1∨B1)</code>
 </pre>
 <p>我们可以分两种情况表示：</p>
+
 <h3><code>B1</code>是给定的</h3>
 <p>这个时候，<code>B1</code>和<code>¬B1</code>可以分开表示，于是简化了电路。我们有横竖两个方案。</p>
 <p>一，横放，如图中右边开关就是<code>A1</code>，左边上面的开关就是<code>¬B1</code>，左边下面的开关就是<code>B1</code>，左边的两个开关是给定的，不变化，从而只变化右边的输入<code>A1</code>。可以看到此处<code>B1</code>恒等于0，而右边输入<code>A1</code>也为0，输出结果是0，于是这是一个<code class="kbd">⊕</code>。</p>
 <p><img src="./picture/2016-09-04-01_XOR1.png" alt="XOR1"></p>
 <p>二，我们给出一个竖放的版本，其结果在上方。原理是类似的。</p>
 <p><img src="./picture/2016-09-04-04_XOR4.png" alt="XOR4"></p>
+
 <h3><code>B1</code>不是给定的</h3>
 <p>这个时候<code>B1</code>与<code>A1</code>地位等同。根据以前的Blog，我们现在有两种表示方案。</p>
 <p>一，这种方案是最小巧的，占地面积小，与相邻方块影响小（中继器不容易受干扰），但是高度较高有4层。</p>
@@ -103,7 +105,7 @@
 <p><img src="./picture/2016-09-04-03_XOR3.png" alt="XOR3"></p>
 <p>选择什么样的方案需要因时因地制宜。在我们这里只需要<code>B1</code>给定的<code class="kbd">⊕</code>门。<code class="kbd">⊕</code>门有一横一竖两种方案，对应的二进制0000-1001转十进制0-9也有一竖一横两种方案。注意第一张图是二进制0000-1111转十进制0-15的，是一个扩展方案，两张图中的输入都是<code>Bin(0111)=Dec(7)</code>。</p>
 <p><img src="./picture/2016-09-04-05_MBin2Dec.png" alt="MBin2Dec"></p>
-<p><img src="./picture/2016-09-04-05_MBin2Dec2.png" alt="MBin2Dec2"></p>
+<p><img src="./picture/2016-09-04-06_MBin2Dec2.png" alt="MBin2Dec2"></p>
 
 <h2>加法器</h2>
 <p>加法器一直是我们关注的重点，在<a href="http://blog.sina.com.cn/s/blog_b34f2e7b0102w9pg.html">上一个Blog</a>中我们已经得出了结论，那就是加法器就是把若干个全加器排列起来，而全加器是这样的一个东西：</p>
@@ -111,11 +113,12 @@
     <li>全加器，输入为三个0或1的信号，两个是输入的数字，另一个是前一位的进位；输出为两个信号，一个是本位上的计算结果，一个是进位</li>
 </ul>
 <p>令A，B分别为该位上输入的两个数字，C为前一位的进位，S为计算结果，C'为新的进位，我们有：</p>
-<pre>
-<code>S=(A⊕B)⊕C</code>
-<code>C'=((A⊕B)∧C)∨(A∧B)=¬(¬(A⊕B)∨¬C)∨¬(¬A∨¬B)</code>
-</pre>
-<p>经过多少次复杂的测试，最终我找到了比较好的两个方案，分别使用上文提到的两种不同的<code class="kbd">⊕</code>门。</p>
+<ul>
+    <li><code>S=(A⊕B)⊕C</code></li>
+    <li><code>C'=((A⊕B)∧C)∨(A∧B)=¬(¬(A⊕B)∨¬C)∨¬(¬A∨¬B)</code></li>
+</ul>
+
+<p>经过无数次复杂的测试，最终我找到了比较好的两个方案，分别使用上文提到的两种不同的<code class="kbd">⊕</code>门。在建造过程中，需要注意的是进位的排布方式，这直接关系到全加器与全加器之间的距离，从而影响输入。</p>
 <p>一，使用无比较器的<code class="kbd">⊕</code>门。高一些，但是占地面积小。</p>
 <p><img src="./picture/2016-09-04-7_jiafa1.png" alt="jiafa1"></p>
 <p>二，使用有比较器的<code class="kbd">⊕</code>门。矮一些，但是占地面积大。</p>
