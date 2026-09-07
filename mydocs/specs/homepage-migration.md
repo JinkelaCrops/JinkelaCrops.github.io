@@ -44,3 +44,6 @@ Checkpoint: complete. Implementation commit cf2c69743a3e27d51d0dbf2c51891be82a64
 User requests combining proposed projects and research-note topics. Approved scope: place each existing outline within its corresponding project card, rename section Projects & Research, remove standalone Notes navigation/section, retain bilingual content and proposed status. Validate with existing build/link/interaction checks, then synchronize.
 
 merge-research validation: all three cards contain the corresponding outline and two expandable sections. No standalone notes section/navigation remains. Six tests and theme/language interaction checks passed.
+
+## Follow-up: research-rows
+User approved horizontal full-width project rows. Each row groups the overview on the left and scope/research outline on the right, stacking on mobile. Content and interactions unchanged. Build and existing tests validate the change before publishing.
