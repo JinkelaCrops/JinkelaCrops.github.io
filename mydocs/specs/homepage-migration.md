@@ -26,7 +26,7 @@ Removed preview banner/noindex; added canonical URL, robots and sitemap. Added a
 2026-09-08: Prototype migrated into deployable static website. Historical website removed from active publishing tree after independent backup verification.
 
 ## Resume / Handoff
-Next: commit, push without force, verify GitHub Pages build and live assets. Browser visual QA is not recorded as performed.
+Complete: implementation commit 55728eccbc8b6cd758efa26e4f58f1842cd24cc6 pushed without force. GitHub Pages reported built. Live HTML, CSS, JS, robots and sitemap returned HTTP 200 and matched local bytes. Retired article URL returned the custom archive 404. Browser visual QA is not recorded as performed.
 
 ## Project Sync Candidates
 README documents the verified static editing/publishing workflow.

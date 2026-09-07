@@ -8,4 +8,4 @@ The supplied prototype is now a production static website with its original layo
 
 Validation: three structural/release tests, JavaScript interaction tests (language/theme, saved preference and blocked storage), syntax check, local HTTP 200. No scientific results or new open-source releases are claimed. Visual browser QA has not been performed.
 
-Publishing verification pending.
+Published at https://jinkelacrops.github.io/. Implementation commit: 55728eccbc8b6cd758efa26e4f58f1842cd24cc6. GitHub Pages build succeeded; five live files returned HTTP 200 and matched local bytes. A retired article URL correctly returned the archive navigation 404.
