@@ -10,4 +10,4 @@ Edit `src/index.html`, `src/site.css`, and `src/site.js`. Run `python src/build.
 
 ## Historical site
 
-The previous site remains in Git history at commit `2587917178fceb9c10a831371d60442fe0c78614`. Earlier URLs display an archive navigation page. No private project code is included.
+The previous site remains in Git history at commit `2587917178fceb9c10a831371d60442fe0c78614`. Earlier URLs now display the corresponding article with the current site design. Browse `/blog/` for all nine posts and two referenced readings. Edit article bodies and metadata in `src/blog/`; `src/build.py` rebuilds the list, article pages, old routes, and sitemap. Article text remains in its original language. No private project code is included.

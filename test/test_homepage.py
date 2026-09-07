@@ -15,7 +15,7 @@ class WebsiteTests(unittest.TestCase):
         p=Page((ROOT/'index.html').read_text())
         for link in p.links:
             if link.startswith('#'): self.assertIn(link[1:],p.ids)
-            elif link.startswith('/'): self.assertTrue((ROOT/link.lstrip('/')).is_file(),link)
+            elif link.startswith('/'): self.assertTrue(((ROOT/link.lstrip('/')).is_file() or (ROOT/link.lstrip('/')/'index.html').is_file()),link)
     def test_published_copy_matches_source(self):
         self.assertEqual((ROOT/'index.html').read_bytes(),(ROOT/'src/index.html').read_bytes())
         for name in ['site.css','site.js']:

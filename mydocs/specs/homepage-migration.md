@@ -30,3 +30,12 @@ Complete: implementation commit 55728eccbc8b6cd758efa26e4f58f1842cd24cc6 pushed 
 
 ## Project Sync Candidates
 README documents the verified static editing/publishing workflow.
+
+## Follow-up: legacy-blog-pages
+User requested an on-site blog list and independently readable pages in the homepage style. This supersedes the earlier archive-to-GitHub/404 behavior.
+
+Done Contract: nine listed posts, two linked readings, preserved original body text/assets, functioning internal routes and anchors, shared theme/navigation, old URL compatibility, verified publishing.
+
+Implementation: src/blog content and assets are built into /blog/ plus original URL aliases. Source body text of all eleven documents matches the archive, excluding the explicit missing-attachment labels. All 49 copied assets are byte-identical. The two originally absent downloads are labeled unavailable. Original attribution remains. Six Python checks and JavaScript theme/language checks pass. No browser visual QA is claimed.
+
+Checkpoint: implementation validated locally; publishing verification pending. No new project-wide policy changes.
