@@ -39,3 +39,8 @@ Done Contract: nine listed posts, two linked readings, preserved original body t
 Implementation: src/blog content and assets are built into /blog/ plus original URL aliases. Source body text of all eleven documents matches the archive, excluding the explicit missing-attachment labels. All 49 copied assets are byte-identical. The two originally absent downloads are labeled unavailable. Original attribution remains. Six Python checks and JavaScript theme/language checks pass. No browser visual QA is claimed.
 
 Checkpoint: complete. Implementation commit cf2c69743a3e27d51d0dbf2c51891be82a643e8c published. All 25 checked live routes/assets returned HTTP 200 and matched local bytes, covering the list, eleven article pages, eleven old routes, homepage and CSS. No new project-wide policy changes.
+
+## Follow-up: merge-research
+User requests combining proposed projects and research-note topics. Approved scope: place each existing outline within its corresponding project card, rename section Projects & Research, remove standalone Notes navigation/section, retain bilingual content and proposed status. Validate with existing build/link/interaction checks, then synchronize.
+
+merge-research validation: all three cards contain the corresponding outline and two expandable sections. No standalone notes section/navigation remains. Six tests and theme/language interaction checks passed.
