@@ -47,3 +47,5 @@ merge-research validation: all three cards contain the corresponding outline and
 
 ## Follow-up: research-rows
 User approved horizontal full-width project rows. Each row groups the overview on the left and scope/research outline on the right, stacking on mobile. Content and interactions unchanged. Build and existing tests validate the change before publishing.
+
+research-rows correction: user requested compact horizontal list rows stacked vertically. Replaced two-column blocks with a single-line project summary (number, name, description, expansion control), and collapsed details below each row. Existing copy and six inner disclosures are retained.
