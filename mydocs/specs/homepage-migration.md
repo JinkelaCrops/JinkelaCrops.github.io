@@ -38,4 +38,4 @@ Done Contract: nine listed posts, two linked readings, preserved original body t
 
 Implementation: src/blog content and assets are built into /blog/ plus original URL aliases. Source body text of all eleven documents matches the archive, excluding the explicit missing-attachment labels. All 49 copied assets are byte-identical. The two originally absent downloads are labeled unavailable. Original attribution remains. Six Python checks and JavaScript theme/language checks pass. No browser visual QA is claimed.
 
-Checkpoint: implementation validated locally; publishing verification pending. No new project-wide policy changes.
+Checkpoint: complete. Implementation commit cf2c69743a3e27d51d0dbf2c51891be82a643e8c published. All 25 checked live routes/assets returned HTTP 200 and matched local bytes, covering the list, eleven article pages, eleven old routes, homepage and CSS. No new project-wide policy changes.
